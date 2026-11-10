@@ -30,18 +30,3 @@ Base URL 填到服务根路径，程序会加上 `/chat/completions`。远程连
 - **朗读回复**。点「朗读回复」，也可以勾选「自动朗读」。语音使用操作系统自带的合成引擎。安装中文系统语音后，桌宠会优先选用中文语音。
 
 API Key 仅在当前运行中保留，也可通过 `ELYMS_API_KEY` 和 `ELYMS_STT_API_KEY` 环境变量传入。聊天记录和录音不写入项目目录。配置了远程服务后，聊天文本或主动录制的音频会发送给对应服务。
-
-## 放到 GitHub
-
-先在 GitHub 创建一个空仓库，再在解压后的项目目录执行下面的命令。把 `YOUR-USERNAME` 和仓库名换成实际值。
-
-```sh
-git init -b main
-git add .
-git update-index --chmod=+x Start-Mac.command
-git commit -m "Add Elyms desktop pet"
-git remote add origin https://github.com/YOUR-USERNAME/elyms-desktop-pet.git
-git push -u origin main
-```
-
-角色曳尔沐来自《异环》。项目内的角色立绘为同人素材。发布前请确认你打算公开的素材及其使用范围。
