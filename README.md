@@ -21,7 +21,13 @@
 | DeepSeek | `https://api.deepseek.com` | 填写 DeepSeek 控制台显示的模型 ID。 |
 | Ollama | `http://localhost:11434/v1` | 填写已下载的模型名。聊天 Key 可留空。 |
 
-Base URL 填到服务根路径，程序会加上 `/chat/completions`。远程连接使用 HTTPS，本机服务可使用 HTTP。桌宠会随每次请求带上最近八轮对话。清空对话会清除本次会话的上下文。
+Base URL 填到服务根路径，程序会加上 `/chat/completions`。远程连接使用 HTTPS，本机服务可使用 HTTP。
+
+## 记忆
+
+- **接着聊**。桌宠按服务地址和模型在本机保存最近八轮成功的 AI 对话。重启后会恢复，并将这些对话带入下一次请求。点「清空对话」可删除当前模型的对话记录。
+- **记住偏好**。直接发送 `记住：以后叫我小星`，或点顶部「记忆」填写常用称呼、偏好等信息。长期记忆最多 2000 字，跨模型使用。打开「记忆」即可查看、修改或删掉内容，也可以清空后保存。
+- **存储位置**。Windows 默认保存在 `%LOCALAPPDATA%\ElymsDesktopPet\memory.sqlite3`，macOS 默认保存在 `~/Library/Application Support/ElymsDesktopPet/memory.sqlite3`。启用 AI 聊天时，相关对话和已保存的长期记忆随请求发给所选聊天服务。离线演示中也可以编辑长期记忆。
 
 ## 语音
 
